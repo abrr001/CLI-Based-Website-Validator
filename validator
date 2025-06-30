@@ -1,0 +1,25 @@
+import requests
+
+
+def validate_website(url):
+    try:
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            print(f"Website {url} is valid.")
+            return True
+        else:
+            print(f"Website {url} is not valid. "
+                  f"Status code: {response.status_code}")
+            return False
+    except requests.RequestException as e:
+        print(f"Error validating website {url}: {e}")
+        return False
+
+
+if __name__ == "__main__":
+    user_url = input("Enter website URL (include http:// or https://): ")
+    is_valid = validate_website(user_url)
+    if is_valid:
+        print("The website is valid.")
+    else:
+        print("The website is not valid.")
