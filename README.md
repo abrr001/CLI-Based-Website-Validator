@@ -109,7 +109,7 @@ The script handles various types of errors:
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is open source.
 
 ## Contributing
 
